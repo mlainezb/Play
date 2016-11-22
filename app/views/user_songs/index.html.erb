@@ -1,0 +1,19 @@
+<h1> Playlist </h1>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>gener</th>
+			<th>duration</th>
+		</tr>
+	</thead>
+	<tbody>
+	< % @user_songs.each do |catched| % >
+		<tr>
+			<td><%= user_songs.song.name %></td>
+			<td><%= user_songs.song.gener %></td>
+			<td><%= user_songs.song.duration %></td>
+		</tr>
+	</tbody>
+	<% end %>
+</table>

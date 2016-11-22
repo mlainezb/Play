@@ -1,13 +1,18 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+ devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
     enum role: [:trainer, :admin]
   	before_create :set_role
 
 
-    has_many  :user_song,  dependent : :destroy
+    has_many  :user_song,  dependent: :destroy
 	has_many :songs, through: :user_song
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+	def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up,keys:[:name])
+# Acá agregamos el nombre a los parametros que no se bloquean
+end
+
+ 
 end

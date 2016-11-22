@@ -5,32 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Song.destroy_all
+Song.destroy_all;
+Genre.destroy_all;
+User.destroy_all;
 songs = Song.create ([
 	{ 
-		name: 'Cazueletor',
-		Durarion: '2',  
-		gene: 'Rock' 
+	name: 'Cazueletor',
+	duration: '2',  
+	genres: 'Rock' 
 	},
 	{
 	name: 'Cokeitor',
-	Durarion: '1',  
-	gene: 'Romantica' 	
+	duration: '1',  
+	genres: 'Romantica' 	
 	},
 	{
 	name: 'One',
-	Durarion: '5',  
-	gene: 'Metal' 	
+	duration: '5',  
+	genres: 'Metal' 	
 	},
 	{
 	name: 'Llalalala',
-	Durarion: '4',  
-	gene: 'Salsa' 
+	duration: '4',  
+	genres: 'Salsa' 
 	}
 	])
 
-User.destroy_all
-User.create([
+
+genres = Genre.create([
+	{
+		name: 'Rock',
+	},
+	{
+		name: 'Romantica',
+	},
+	{
+		name: 'Metal',
+	},
+	{
+		name: 'Salsa'
+	}
+])
+
+users = User.create([
 	{
 		name: 'Manuel',
 		email: 'lalala@hotmail.com',
@@ -42,4 +59,5 @@ User.create([
 		email: 'mati@hotmail.com',
 		password: '123456',
 		role: 'trainer'
-	},
+	}
+	])
