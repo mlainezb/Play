@@ -5,6 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
+
+Heruku: https://git.heroku.com/pruebaplaylist.git
+
 * Ruby version
 
 * System dependencies
